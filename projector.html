@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   <title>Projector Control</title>
+   <!-- Bootstrap -->
+
+   <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-reboot.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="Switcher.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body style="background-color:#333333;" onload="startTime()">
+	<div style="position: fixed; z-index:-1; width:100%; height:35%; background:#cccccc" id="top-background">
+<!-- projector power button -->
+  </div>
+  <div class="fixed-row-top">
+ <div class="container-fluid container-center p-3">
+  <button type="button" class="btn btn-lg btn-block" style="width:50%; background-color:#7cb342;  box-shadow: 1px 1px rgba(0, 0, 0, 0.73);" id="PJ_ON">Turn On Projector</button>
+</div>
+<!--Input buttons -->
+</div >
+  <div class="fixed-row-center container-center">
+  <div><div><button type="button" class="btn btn-source btn-circle btn-xl m-2 " id="Computer"><span class="InputIcon-Computer inputs"></span></button></div>
+  <label class="input-label container-fluid ">Computer</label>
+</div>
+  <div><div><button type="button" class="btn btn-source btn-circle btn-xl m-2" id="Laptop"><span class="icon-laptop inputs"></span></button></div>
+  <label class="input-label container-fluid ">Laptop</label></div>
+
+  <div><div><button type="button" class="btn btn-source btn-circle btn-xl m-2" id="DocCam"><span class="InputIcon-DocCam inputs"></span></button></div>
+  <label class="input-label container-fluid ">Doc Cam</label></div>
+
+    <div><div><button type="button" class="btn btn-source btn-circle btn-xl m-2" id="BluRay"><span class="InputIcon-BluRay inputs"></span></button></div>
+  <label class="input-label container-fluid ">Blu Ray</label></div>
+</div>
+</div>
+<!--Volume, Mic, Help Icon and Clock-->
+<div class="container-fluid container-center row-4 fixed-row-bottom" style= " z-index:-1; width:102%; height:30%; background:#231f20; box-shadow: 1px 1px rgba(0, 0, 0, 0.73);" >
+  <div class="col-md-1 p-2">
+      <img src="images/Volume.svg" id="volume_Icon">
+      <img src="images/Mic_Icon.svg" id="mic_Icon">
+  </div>
+  <div id="volumeSlider" class="col-xl-2" style="width:60%;">
+  <input id="volumeBar" type="range" min="0" max="100" value ="0" class="slider">
+  <input id="micBar" type="range" min="0" max="60" value ="0" class="slider">
+</div>
+<div id="blank" class="col-sm-3" style="height:60%; width:25%">
+  <button type="button" id="blankScreen" class="btn btn-md btn-blank"> Blank Screen </button>
+
+</div>
+<div id="widgets" class="col-sm-4" style="border-left: 1px solid white; height:100%">
+  <div id="info-box">
+    <a data-toggle="modal" data-target="#exampleModal"><img src="images/info.svg " id="info"></a>
+  </div>
+  <div id="clock" class="container-center" style="color:white" >
+  </div>
+  </div>
+
+</div>
+		
+	<!-- Help Icon Pop Up -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModal">Help</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       For assistance contact the helpdesk at:
+
+            <p>(718)-636-3765</p>
+           <p>techsupport@pratt.edu</p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
